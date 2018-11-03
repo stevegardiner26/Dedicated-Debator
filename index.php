@@ -8,6 +8,8 @@
 ?>
 
 <?php
-include('index.html');
+include('html/nav.html');
+include('html/index.html');
+include('html/footer.html');
 ?>
 
