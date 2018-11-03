@@ -17,7 +17,7 @@ var banner = ['/*!\n',
   '\n'
 ].join('');
 
-// Copy third party libraries from /node_modules into /vendor
+// Copy third party libraries from /node_modules into /v
 gulp.task('vendor', function() {
 
   // Bootstrap
@@ -26,37 +26,37 @@ gulp.task('vendor', function() {
       '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
       '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
     ])
-    .pipe(gulp.dest('./vendor/bootstrap'))
+    .pipe(gulp.dest('./v/bootstrap'))
 
   // Font Awesome 5
   gulp.src([
       './node_modules/@fortawesome/**/*'
     ])
-    .pipe(gulp.dest('./vendor'))
+    .pipe(gulp.dest('./v'))
 
   // jQuery
   gulp.src([
       './node_modules/jquery/dist/*',
       '!./node_modules/jquery/dist/core.js'
     ])
-    .pipe(gulp.dest('./vendor/jquery'))
+    .pipe(gulp.dest('./v/jquery'))
 
   // jQuery Easing
   gulp.src([
       './node_modules/jquery.easing/*.js'
     ])
-    .pipe(gulp.dest('./vendor/jquery-easing'))
+    .pipe(gulp.dest('./v/jquery-easing'))
 
   // Simple Line Icons
   gulp.src([
       './node_modules/simple-line-icons/fonts/**',
     ])
-    .pipe(gulp.dest('./vendor/simple-line-icons/fonts'))
+    .pipe(gulp.dest('./v/simple-line-icons/fonts'))
 
   gulp.src([
       './node_modules/simple-line-icons/css/**',
     ])
-    .pipe(gulp.dest('./vendor/simple-line-icons/css'))
+    .pipe(gulp.dest('./v/simple-line-icons/css'))
 
 });
 
