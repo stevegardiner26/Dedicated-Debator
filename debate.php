@@ -47,10 +47,10 @@
                             <option value="gunRights">Gun Rights</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="forAgainst">
                         <h5>Do you for this issue or are you against this?</h5>
-                        <label class="switch" id="forAgainst">
-                            <h6>For</h6>
+                        <h6>For</h6>
+                        <label class="switch">
                             <input type="checkbox" onchange="forOrAgainst()" checked>
                             <span class="slider round"></span>
                         </label>
