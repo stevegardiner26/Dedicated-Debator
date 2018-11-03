@@ -30,21 +30,21 @@
                         <label for="issue">Recent Issues:</label>
                         <select name="issueRecent" id="issue" class="form-control">
                             <option value="default">Recent</option>
-                            <option value="caravan">Migrant Caravan</option>
-                            <option value="donaldTrump">Donald Trump</option>
-                            <option value="kanye">Kanye West</option>
-                            <option value="birthright">Birthright Citizenship for Illegals</option>
-                            <option value="dueProcess">Innocent Until Proven Guilty</option>
+                            <option value="Caravan">Migrant Caravan</option>
+                            <option value="Donald Trump">Donald Trump</option>
+                            <option value="Kanye">Kanye West</option>
+                            <option value="Birthright">Birthright Citizenship for Illegals</option>
+                            <option value="Due Process">Innocent Until Proven Guilty</option>
                         </select>
                     </div>
                     <div class="form-group" id="mainGroup" style="display: none;">
                         <label for="issue">Controversial Issues:</label>
                         <select name="issueMain" id="issue" class="form-control">
                             <option value="default">Controversy</option>
-                            <option value="immigration">Illegal Immigration</option>
-                            <option value="taxes">Taxes</option>
-                            <option value="hateSpeech">Hate Speech</option>
-                            <option value="gunRights">Gun Rights</option>
+                            <option value="Immigration">Illegal Immigration</option>
+                            <option value="Taxes">Taxes</option>
+                            <option value="Hate Speech">Hate Speech</option>
+                            <option value="Gun Rights">Gun Rights</option>
                         </select>
                     </div>
                     <div class="form-group" id="forAgainst">
