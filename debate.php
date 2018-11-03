@@ -49,11 +49,11 @@
                     </div>
                     <div class="form-group">
                         <h5>Do you for this issue or are you against this?</h5>
-                        <label class="switch">
-                            <input type="checkbox">
+                        <label class="switch" id="forAgainst">
+                            <h6>For</h6>
+                            <input type="checkbox" onchange="forOrAgainst()" checked>
                             <span class="slider round"></span>
                         </label>
-                        <small class="form-text text-muted">Turn the button on if you are for the issue</small>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary" type="submit">Submit</button>
@@ -143,6 +143,17 @@
             document.getElementById('recentGroup').style.display = 'none';
             document.getElementById('mainGroup').style.display = 'block';
             recentShown = false;
+        }
+    }
+
+    var against = false;
+    function forOrAgainst() {
+        if (against === false) {
+            document.getElementById('forAgainst').getElementsByTagName('h6')[0].innerHTML = 'Against';
+            against = true;
+        } else {
+            document.getElementById('forAgainst').getElementsByTagName('h6')[0].innerHTML = 'For';
+            against = false;
         }
     }
 </script>
