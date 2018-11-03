@@ -55,6 +55,9 @@
                         </label>
                         <small class="form-text text-muted">Turn the button on if you are for the issue</small>
                     </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>
