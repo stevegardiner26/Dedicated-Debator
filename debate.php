@@ -13,22 +13,22 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h1>Start your Discussion! Change Minds!</h1>
-                <form action="GET">
+                <form action="chatRoom.php" method="post">
                     <div class="form-group">
                         <label for="alias">Alias:</label>
-                        <input type="text" class="form-control" id="alias" placeholder="Master Debator 10000">
+                        <input name="alias" type="text" class="form-control" id="alias" placeholder="Master Debator 10000">
                         <small class="form-text text-muted">What shall we call you? The other user will see this as your name</small>
                     </div>
                     <div class="form-group">
                         <h6>Recent Issues or General Topics</h6>
                         <label class="switch">
-                            <input type="checkbox" onchange="formSwitcher()">
+                            <input name="issueSelector" type="checkbox" onchange="formSwitcher()">
                             <span class="slider round"></span>
                         </label>
                     </div>
                     <div class="form-group" style="display: none;" id="recentGroup">
                         <label for="issue">Recent Issues:</label>
-                        <select name="issue" id="issue" class="form-control">
+                        <select name="issueRecent" id="issue" class="form-control">
                             <option value="default">Recent</option>
                             <option value="caravan">Migrant Caravan</option>
                             <option value="donaldTrump">Donald Trump</option>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group" id="mainGroup">
                         <label for="issue">Controversial Issues:</label>
-                        <select name="issue" id="issue" class="form-control">
+                        <select name="issueMain" id="issue" class="form-control">
                             <option value="default">Controversy</option>
                             <option value="immigration">Illegal Immigration</option>
                             <option value="taxes">Taxes</option>
@@ -51,7 +51,7 @@
                         <h5>Do you for this issue or are you against this?</h5>
                         <h6>For</h6>
                         <label class="switch">
-                            <input type="checkbox" onchange="forOrAgainst()" checked>
+                            <input name="side" type="checkbox" onchange="forOrAgainst()" checked>
                             <span class="slider round"></span>
                         </label>
                     </div>
