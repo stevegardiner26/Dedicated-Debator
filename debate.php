@@ -26,7 +26,7 @@
                             <span class="slider round"></span>
                         </label>
                     </div>
-                    <div class="form-group" style="display: none;" id="recentGroup">
+                    <div class="form-group" id="recentGroup">
                         <label for="issue">Recent Issues:</label>
                         <select name="issueRecent" id="issue" class="form-control">
                             <option value="default">Recent</option>
@@ -37,7 +37,7 @@
                             <option value="dueProcess">Innocent Until Proven Guilty</option>
                         </select>
                     </div>
-                    <div class="form-group" id="mainGroup">
+                    <div class="form-group" id="mainGroup" style="display: none;">
                         <label for="issue">Controversial Issues:</label>
                         <select name="issueMain" id="issue" class="form-control">
                             <option value="default">Controversy</option>
@@ -133,7 +133,7 @@
 </style>
 
 <script>
-    var recentShown = false;
+    var recentShown = true;
     function formSwitcher() {
         if (recentShown === false) {
             document.getElementById('recentGroup').style.display = 'block';
