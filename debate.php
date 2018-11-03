@@ -20,13 +20,13 @@
                         <small class="form-text text-muted">What shall we call you? The other user will see this as your name</small>
                     </div>
                     <div class="form-group">
-                        <!-- Recent Issues or General Issues -->
+                        <h6>Recent Issues or General Topics</h6>
                         <label class="switch">
-                            <input type="checkbox">
+                            <input type="checkbox" onchange="formSwitcher()">
                             <span class="slider round"></span>
                         </label>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="display: none;" id="recentGroup">
                         <label for="issue">Recent Issues:</label>
                         <select name="issue" id="issue" class="form-control">
                             <option value="default">Recent</option>
@@ -37,7 +37,7 @@
                             <option value="dueProcess">Innocent Until Proven Guilty</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="mainGroup">
                         <label for="issue">Controversial Issues:</label>
                         <select name="issue" id="issue" class="form-control">
                             <option value="default">Controversy</option>
@@ -128,3 +128,18 @@
         border-radius: 50%;
     }
 </style>
+
+<script>
+    var recentShown = false;
+    function formSwitcher() {
+        if (recentShown === false) {
+            document.getElementById('recentGroup').style.display = 'block';
+            document.getElementById('mainGroup').style.display = 'none';
+            recentShown = true;
+        } else {
+            document.getElementById('recentGroup').style.display = 'none';
+            document.getElementById('mainGroup').style.display = 'block';
+            recentShown = false;
+        }
+    }
+</script>
