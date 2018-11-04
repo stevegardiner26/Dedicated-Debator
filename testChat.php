@@ -3,6 +3,7 @@ session_start();
 
 function loginForm(){
     echo'
+ <header class="masthead loginMast">
     <section class="debateFinder text-center">
     <div class="container">
         <div class="row">
@@ -10,12 +11,12 @@ function loginForm(){
                 <h1>Start your Discussion! Change Minds!</h1>
                 <form action="testChat.php" method="post">
                     <div class="form-group">
-                        <label for="name"><h6>Alias</h6></label>
+                        <label for="name"><h5>Alias</h5></label>
                         <input name="name" type="text" class="form-control" id="name" placeholder="Master Debator 10000">
-                        <small class="form-text text-muted">What shall we call you? The other user will see this as your name</small>
+                        <small class="form-text text-muted" style="color: white !important;">What shall we call you? The other user will see this as your name</small>
                     </div>
                     <div class="form-group">
-                        <h6>Recent Issues or General Topics</h6>
+                        <h5>Recent Issues or General Topics</h5>
                         <label class="switch">
                             <input name="issueSelector" type="checkbox" onchange="formSwitcher()">
                             <span class="slider round"></span>
@@ -24,7 +25,6 @@ function loginForm(){
                     <div class="form-group" id="recentGroup">
                         <label for="issue"><h6>Recent Issues:</h6></label>
                         <select name="issueRecent" id="issue" class="form-control">
-                            <option value="default">Recent</option>
                             <option value="Caravan">Migrant Caravan</option>
                             <option value="Donald Trump">Donald Trump</option>
                             <option value="Kanye">Kanye West</option>
@@ -33,9 +33,8 @@ function loginForm(){
                         </select>
                     </div>
                     <div class="form-group" id="mainGroup" style="display: none;">
-                        <label for="issue"><h6>Controversial Issues:</h6></label>
+                        <label for="issue"><h6>General Controversial Issues:</h6></label>
                         <select name="issueMain" id="issue" class="form-control">
-                            <option value="default">Controversy</option>
                             <option value="Immigration">Illegal Immigration</option>
                             <option value="Taxes">Taxes</option>
                             <option value="Hate Speech">Hate Speech</option>
@@ -43,7 +42,7 @@ function loginForm(){
                         </select>
                     </div>
                     <div class="form-group" id="forAgainst">
-                        <h5>Are you for this or are you against this?</h5>
+                        <h5>Are you <strong>FOR</strong> this or are you <strong>AGAINST</strong> this?</h5>
                         <h6>For</h6>
                         <label class="switch">
                             <input name="side" type="checkbox" onchange="forOrAgainst()" checked>
@@ -51,13 +50,14 @@ function loginForm(){
                         </label>
                     </div>
                     <div class="form-group">
-                        <input class="btn btn-primary" type="submit" name="enter" id="enter" value="Enter">
+                        <input style="margin: 30px 0px; background: #fdcc52;" class="btn" type="submit" name="enter" id="enter" value="Enter">
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </section>
+</header>
     ';
 }
 
@@ -103,18 +103,17 @@ if(!isset($_SESSION['name'])){
 }
 else{
     ?>
+<header class="masthead chatMast">
     <div class="debateFinder">
         <div class="row">
             <div class="col-md">
-                <p>You wanted to discuss: <?php if($_SESSION["issueSelector"] === "on"){echo "Controversial Issues";} else {echo "Recent Issues";} ?></p><br>
-                <p>Your Issue is <?php if($_SESSION["issueSelector"] === "on"){echo $_SESSION["issueMain"];} else {echo $_SESSION["issueRecent"];} ?></p><br>
-                <p>Your Position is <?php if($_SESSION["side"] === "on"){echo "For";} else {echo "Against";} ?></p><br>
+                <h2 style="margin: 30px;"><?php if($_SESSION["issueSelector"] === "on"){echo "Controversial Issues";} else {echo "Recent Issues";} ?></h2><br>
             </div>
         </div>
         <div id="wrapper">
             <div id="menu">
-                <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?> you are <?php $_SESSION['For'] ?></b></p>
-                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+                <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?> you are debating <?php if($_SESSION["side"] === "on"){echo "for";} else {echo "against";} ?> <?php if($_SESSION["issueSelector"] === "on"){echo $_SESSION["issueMain"];} else {echo $_SESSION["issueRecent"];} ?></b></p>
+                <p class="logout"><a id="exit" href="#">Leave Chat</a></p>
                 <div style="clear:both"></div>
             </div>
             <div id="chatbox">
@@ -129,10 +128,11 @@ else{
             </div>
             <form name="message" action="">
                 <input name="usermsg" type="text" id="usermsg" size="63" />
-                <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+                <input style="background: #fdcc52;" name="submitmsg" class="btn btn-sm" type="submit"  id="submitmsg" value="Send" />
             </form>
         </div>
     </div>
+</header>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
     <script type="text/javascript">
         // jQuery Document
@@ -175,15 +175,73 @@ else{
     <?php
 }
 ?>
-<?php include('html/footer.html')?>
 </body>
 </html>
 <style>
+    ::-webkit-scrollbar {
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-button {
+        display:  none;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: darkgray;
+        width: 4px;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: white;
+    }
+
+    ::-webkit-scrollbar-track-piece {
+        background: white;
+    }
+
+    header {
+        position: absolute !important;
+        left: 0;
+        top: 0;
+    }
+
+    @media only screen and (max-width: 991px) {
+        .loginMast {
+            padding-top: 0 !important;
+        }
+
+        .chatMast {
+            overflow: hidden !important;
+            padding-top: 50px !important;
+            height: 100vh !important;
+        }
+
+        #wrapper {
+            width: 95vw !important;
+            height: 75vh !important;
+        }
+
+        #chatbox {
+            width: 90% !important;
+            height: 65% !important;
+        }
+
+        #usermsg {
+            width: 90% !important;
+        }
+
+        #submitmsg {
+            margin: 10px auto !important;
+        }
+    }
+
     body {
         font:12px arial;
         color: #222;
         text-align:center;
-        padding:35px; }
+        padding:35px;
+        overflow: hidden;
+    }
 
     form, p, span {
         margin:0;
@@ -192,17 +250,20 @@ else{
     input { font:12px arial; }
 
     a {
-        color:#0000FF;
+        color:#cd2122;
         text-decoration:none; }
 
     a:hover { text-decoration:underline; }
 
     #wrapper, #loginform {
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px rgba(0,0,0,.1);
         margin:0 auto;
         padding-bottom:25px;
         background:#EBF4FB;
-        width:504px;
-        border:1px solid #ACD8F0; }
+        width:1004px;
+        height: 500px;
+    }
 
     #loginform { padding-top:18px; }
 
@@ -214,22 +275,31 @@ else{
         margin-bottom:25px;
         padding:10px;
         background:#fff;
-        height:270px;
-        width:430px;
-        border:1px solid #ACD8F0;
+        height:370px;
+        width:830px;
+        color: black;
+        border:1px solid lightgray;
         overflow:auto; }
 
     #usermsg {
-        width:395px;
-        border:1px solid #ACD8F0; }
+        font-size: 20px;
+        width:730px;
+        height: 28px;
+        color: black;
+        border:1px solid lightgray; }
 
-    #submit { width: 60px; }
+    #submit { width: 60px;}
+
+    #submitmsg {
+        margin: -10px 20px 0px 20px;
+    }
 
     .error { color: #ff0000; }
 
     #menu { padding:12.5px 25px 12.5px 25px; }
 
-    .welcome { float:left; }
+    .welcome { float:left;
+        color: black; }
 
     .logout { float:right; }
 
@@ -281,11 +351,11 @@ else{
     }
 
     input:checked + .slider {
-        background-color: #2196F3;
+        background-color: #fdcc52;
     }
 
     input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
+        box-shadow: 0 0 1px #fdcc52;
     }
 
     input:checked + .slider:before {
