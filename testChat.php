@@ -87,7 +87,7 @@ if(isset($_GET['logout'])) {
     fwrite($fp2, "<div class='msgln'><i>User " . $_SESSION['name'] . " has left the chat session</i><br></div>");
     fclose($fp2);
 
-    $handle = fopen("test.html", "a");
+    $handle = fopen("test.html", "w");
     fwrite($handle, 'User Left');
     fclose($handle);
 
@@ -98,13 +98,14 @@ if(isset($_GET['logout'])) {
     $checker = false;
 }
 
-
-if((filesize("test.html") > 0)&&($checker === true)) {
-    header("Location: thanks.php");
-    session_destroy();
-    $handle = fopen("test.html", "r+");
-    ftruncate ($handle,0);
-    fclose($handle);
+if(isset($_GET['logging'])) {
+    if ((filesize("test.html") > 0) && ($checker === true)) {
+        header("Location: thanks.php");
+        session_destroy();
+        $handle = fopen("test.html", "r+");
+        ftruncate($handle, 0);
+        fclose($handle);
+    }
 }
 ?>
 
@@ -179,6 +180,10 @@ else{
                     cache: false,
                     success: function(html){
                         $("#chatbox").html(html); //Insert chat log into the #chatbox div
+
+                        if(html.match('has left the chat session')){
+                            window.location = 'testChat.php?logging=true';
+                        }
 
                         //Auto-scroll
                         var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height after the request
