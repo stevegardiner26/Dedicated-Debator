@@ -61,6 +61,7 @@ function loginForm(){
     ';
 }
 
+
 if(isset($_POST['enter'])){
     if($_POST['name'] != ""){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
@@ -68,6 +69,35 @@ if(isset($_POST['enter'])){
         $_SESSION["issueRecent"] = stripslashes(htmlspecialchars($_POST['issueRecent']));
         $_SESSION["issueSelector"] = stripslashes(htmlspecialchars($_POST['issueSelector']));
         $_SESSION["side"] = stripslashes(htmlspecialchars($_POST['side']));
+        /*if($_SESSION["issueSelector"] == 'on') {
+            $issue = 'issueMain';
+        } else {
+            $issue = 'issueRecent';
+        }
+        $stance = 'side';
+
+        $servername = "localhost";
+        $username = "username";
+        $password = "password";
+        $dbname = "myDB";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "INSERT INTO users (issue, stance)
+        VALUES ('' + $_SESSION[$issue], '' + $_SESSION[$stance])";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+
+        $conn->close();*/
 
         $fp = fopen("log.html", 'a');
         fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session.</i><br></div>");
@@ -86,9 +116,13 @@ if(isset($_GET['logout'])) {
     fclose($fp);
 
     session_destroy();
+    $file = 'log.html';
+    unlink($file);
     header("Location: thanks.php"); //Redirect the user
 }
 ?>
+
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml">
@@ -278,6 +312,7 @@ else{
         margin:0 auto;
         margin-bottom:25px;
         padding:10px;
+        font-size: 14px;
         background:#fff;
         height:370px;
         width:830px;
