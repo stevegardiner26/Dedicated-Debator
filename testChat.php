@@ -73,6 +73,12 @@ if(isset($_POST['enter'])){
         }
         $_SESSION["side"] = stripslashes(htmlspecialchars($_POST['side']));
 
+        if($_SESSION["side"] === "on"){
+            $_SESSION['state'] = "for";
+        } else {
+            $_SESSION['state'] = "against";
+        }
+
         if($_SESSION["issueSelector"] === "on"){
             $_SESSION['logger'] = $_SESSION["issueMain"];
         } else {
@@ -81,7 +87,7 @@ if(isset($_POST['enter'])){
 
 
         $fp = fopen("log" . $_SESSION['logger'] . ".html", 'a');
-        fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session. They are " . $_SESSION['side'] . " the issue</i><br></div>");
+        fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session. They are " . $_SESSION['state'] . " the issue</i><br></div>");
         fclose($fp);
     }
     else{
