@@ -3,14 +3,61 @@ session_start();
 
 function loginForm(){
     echo'
-    <div id="loginform">
-    <form action="testChat.php" method="post">
-        <p>Please enter your name to continue:</p>
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" />
-        <input type="submit" name="enter" id="enter" value="Enter" />
-    </form>
+    <section class="debateFinder text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto loginform">
+                <h1>Start your Discussion! Change Minds!</h1>
+                <form action="testChat.php" method="post">
+                    <div class="form-group">
+                        <label for="alias">Alias:</label>
+                        <input name="alias" type="text" class="form-control" id="alias" placeholder="Master Debator 10000">
+                        <small class="form-text text-muted">What shall we call you? The other user will see this as your name</small>
+                    </div>
+                    <div class="form-group">
+                        <h6>Recent Issues or General Topics</h6>
+                        <label class="switch">
+                            <input name="issueSelector" type="checkbox" onchange="formSwitcher()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="form-group" id="recentGroup">
+                        <label for="issue">Recent Issues:</label>
+                        <select name="issueRecent" id="issue" class="form-control">
+                            <option value="default">Recent</option>
+                            <option value="Caravan">Migrant Caravan</option>
+                            <option value="Donald Trump">Donald Trump</option>
+                            <option value="Kanye">Kanye West</option>
+                            <option value="Birthright">Birthright Citizenship for Illegals</option>
+                            <option value="Due Process">Innocent Until Proven Guilty</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="mainGroup" style="display: none;">
+                        <label for="issue">Controversial Issues:</label>
+                        <select name="issueMain" id="issue" class="form-control">
+                            <option value="default">Controversy</option>
+                            <option value="Immigration">Illegal Immigration</option>
+                            <option value="Taxes">Taxes</option>
+                            <option value="Hate Speech">Hate Speech</option>
+                            <option value="Gun Rights">Gun Rights</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="forAgainst">
+                        <h5>Do you for this issue or are you against this?</h5>
+                        <h6>For</h6>
+                        <label class="switch">
+                            <input name="side" type="checkbox" onchange="forOrAgainst()" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="submit" name="enter" id="enter" value="Enter">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+</section>
     ';
 }
 
@@ -40,6 +87,7 @@ if(isset($_GET['logout'])) {
 <head>
     <title>Chat - Customer Module</title>
 </head>
+<?php include('html/nav.html')?>
 <?php
 if(!isset($_SESSION['name'])){
     loginForm();
@@ -110,6 +158,7 @@ else{
     <?php
 }
 ?>
+<?php include('html/footer.html')?>
 </body>
 </html>
 <style>
@@ -138,10 +187,6 @@ else{
         width:504px;
         border:1px solid #ACD8F0; }
 
-    #loginform { padding-top:18px; }
-
-    #loginform p { margin: 5px; }
-
     #chatbox {
         text-align:left;
         margin:0 auto;
@@ -168,4 +213,94 @@ else{
     .logout { float:right; }
 
     .msgln { margin:0 0 2px 0; }
+
+    .debateFinder {
+        height: 100vh;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
 </style>
+
+<script>
+    var recentShown = true;
+    function formSwitcher() {
+        if (recentShown === false) {
+            document.getElementById('recentGroup').style.display = 'block';
+            document.getElementById('mainGroup').style.display = 'none';
+            recentShown = true;
+        } else {
+            document.getElementById('recentGroup').style.display = 'none';
+            document.getElementById('mainGroup').style.display = 'block';
+            recentShown = false;
+        }
+    }
+
+    var against = false;
+    function forOrAgainst() {
+        if (against === false) {
+            document.getElementById('forAgainst').getElementsByTagName('h6')[0].innerHTML = 'Against';
+            against = true;
+        } else {
+            document.getElementById('forAgainst').getElementsByTagName('h6')[0].innerHTML = 'For';
+            against = false;
+        }
+    }
+</script>
