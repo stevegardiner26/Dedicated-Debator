@@ -72,7 +72,7 @@ if(isset($_POST['enter'])){
 
 
         $fp = fopen("log.html", 'a');
-        fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session. You will be disconnected shortly.</i><br></div>");
+        fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session.</i><br></div>");
         fclose($fp);
     }
     else{
@@ -84,7 +84,7 @@ if(isset($_GET['logout'])) {
 
     //Simple exit message
     $fp2 = fopen("log.html", 'a');
-    fwrite($fp2, "<div class='msgln'><i>User " . $_SESSION['name'] . " has left the chat session</i><br></div>");
+    fwrite($fp2, "<div class='msgln'><i>User " . $_SESSION['name'] . " has left the chat session You will be disconnected shortly.</i><br></div>");
     fclose($fp2);
 
     $handle = fopen("test.html", "w");
