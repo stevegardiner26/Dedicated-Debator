@@ -154,6 +154,15 @@ else{
         </div>
     </div>
 </header>
+    !-- Bootstrap core JavaScript -->
+    <script src="./v/jquery/jquery.min.js"></script>
+    <script src="./v/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="./v/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="./js/new-age.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
     <script type="text/javascript">
         // jQuery Document
