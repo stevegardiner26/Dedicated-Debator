@@ -99,7 +99,8 @@ if(isset($_GET['logout'])) {
 }
 
 
-while((filesize("test.html") > 0)&&($checker === true)) {
+if((filesize("test.html") > 0)&&($checker === true)) {
+    header("Location: thanks.php");
     session_destroy();
     $handle = fopen("test.html", "r+");
     ftruncate ($handle,0);
@@ -297,7 +298,7 @@ else{
         margin:0 auto;
         margin-bottom:25px;
         padding:10px;
-        font-size: 14px;
+        font-size: 15px;
         background:#fff;
         height:370px;
         width:830px;
