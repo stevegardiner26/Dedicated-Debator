@@ -94,7 +94,7 @@ if(isset($_GET['logout'])) {
     session_destroy();
     header("Location: thanks.php"); //Redirect the user
     $handle = fopen("log.html", "r+");
-    ftruncate($handle, 0);
+    //ftruncate($handle, 0);
     fclose($handle);
     $checker = false;
 }
@@ -190,8 +190,8 @@ else{
                     cache: false,
                     success: function(html){
                         $("#chatbox").html(html); //Insert chat log into the #chatbox div
-
-                        if(html.match('has left the chat session')){
+                        console.log(html)
+                        if(html === ''){
                             window.location = 'testChat.php?logging=true';
                         }
 
