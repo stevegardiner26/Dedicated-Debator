@@ -260,7 +260,7 @@ else{
         .chatMast {
             padding-top: 50px !important;
             width: 100vw !important;
-            height: 150vh !important;
+            height: 1000px !important;
         }
 
         #wrapper {
