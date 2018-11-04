@@ -64,6 +64,10 @@ function loginForm(){
 if(isset($_POST['enter'])){
     if($_POST['name'] != ""){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
+        $_SESSION["issueMain"] = stripslashes(htmlspecialchars($_POST['issueMain']));
+        $_SESSION["issueRecent"] = stripslashes(htmlspecialchars($_POST['issueRecent']));
+        $_SESSION["issueSelector"] = stripslashes(htmlspecialchars($_POST['issueSelector']));
+        $_SESSION["side"] = stripslashes(htmlspecialchars($_POST['side']));
 
         $fp = fopen("log.html", 'a');
         fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session.</i><br></div>");
@@ -100,9 +104,16 @@ if(!isset($_SESSION['name'])){
 else{
     ?>
     <div class="debateFinder">
-        <div id="wrapper container">
+        <div class="row">
+            <div class="col-md">
+                <p>You wanted to discuss: <?php if($_SESSION["issueSelector"] === "on"){echo "Controversial Issues";} else {echo "Recent Issues";} ?></p><br>
+                <p>Your Issue is <?php if($_SESSION["issueSelector"] === "on"){echo $_SESSION["issueMain"];} else {echo $_SESSION["issueRecent"];} ?></p><br>
+                <p>Your Position is <?php if($_SESSION["side"] === "on"){echo "For";} else {echo "Against";} ?></p><br>
+            </div>
+        </div>
+        <div id="wrapper">
             <div id="menu">
-                <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
+                <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?> you are <?php $_SESSION['For'] ?></b></p>
                 <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
                 <div style="clear:both"></div>
             </div>
@@ -128,7 +139,6 @@ else{
         $(document).ready(function(){
             //If user wants to end session
             $("#exit").click(function(){
-                console.log('asd')
                 var exit = confirm("Are you sure you want to end the session?");
                 if(exit==true){window.location = 'testChat.php?logout=true';}
             });
@@ -137,7 +147,7 @@ else{
             $("#submitmsg").click(function(){
                 var clientmsg = $("#usermsg").val();
                 $.post("post.php", {text: clientmsg});
-                $("#usermsg").attr("value", "");
+                $("#usermsg")[0].value = '';
                 return false;
             });
 
@@ -229,6 +239,10 @@ else{
         height: 100vh;
     }
 
+    body {
+        background-image: linear-gradient(to bottom, rgba(0,0,0,.5), white);
+    }
+
     .switch {
         position: relative;
         display: inline-block;
@@ -314,4 +328,12 @@ else{
             against = false;
         }
     }
+
+    /*window.onbeforeunload = function() {
+        if(confirm("Are you sure you want to end the session?")){
+            return true;
+        }
+        else return false;
+    }*/
 </script>
+
