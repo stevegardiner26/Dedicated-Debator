@@ -175,7 +175,7 @@ session_start();
 function loginForm(){
     echo'
     <div id="loginform">
-    <form action="index.php" method="post">
+    <form action="chatRoom.php" method="post">
         <p>Please enter your name to continue:</p>
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" />
@@ -202,7 +202,7 @@ if(isset($_GET['logout'])){
     fclose($fp);
 
     session_destroy();
-    header("Location: index.php"); //Redirect the user
+    header("Location: thanks.php"); //Redirect the user
 }
 ?>
 
