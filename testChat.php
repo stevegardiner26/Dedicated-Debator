@@ -79,13 +79,13 @@ if(isset($_POST['enter'])){
         echo '<span class="error">Please type in a name</span>';
     }
 }
-
+$checker = true;
 if(isset($_GET['logout'])) {
 
     //Simple exit message
-    $fp = fopen("log.html", 'a');
-    fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has left the chat session</i><br></div>");
-    fclose($fp);
+    $fp2 = fopen("log.html", 'a');
+    fwrite($fp2, "<div class='msgln'><i>User " . $_SESSION['name'] . " has left the chat session</i><br></div>");
+    fclose($fp2);
 
     $handle = fopen("test.html", "a");
     fwrite($handle, 'User Left');
@@ -95,11 +95,12 @@ if(isset($_GET['logout'])) {
     header("Location: thanks.php"); //Redirect the user
     $file = 'log.html';
     unlink($file);
+    $checker = false;
 }
 
 
 
-if(file_exists("test.html") && filesize("test.html") > 0) {
+if((filesize("test.html") > 0)&&($checker === true)) {
     session_destroy();
     header("Location: thanks.php");
 
