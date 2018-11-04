@@ -61,7 +61,6 @@ function loginForm(){
     ';
 }
 
-
 if(isset($_POST['enter'])){
     if($_POST['name'] != ""){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
@@ -69,35 +68,8 @@ if(isset($_POST['enter'])){
         $_SESSION["issueRecent"] = stripslashes(htmlspecialchars($_POST['issueRecent']));
         $_SESSION["issueSelector"] = stripslashes(htmlspecialchars($_POST['issueSelector']));
         $_SESSION["side"] = stripslashes(htmlspecialchars($_POST['side']));
-        /*if($_SESSION["issueSelector"] == 'on') {
-            $issue = 'issueMain';
-        } else {
-            $issue = 'issueRecent';
-        }
-        $stance = 'side';
 
-        $servername = "localhost";
-        $username = "username";
-        $password = "password";
-        $dbname = "myDB";
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        $sql = "INSERT INTO users (issue, stance)
-        VALUES ('' + $_SESSION[$issue], '' + $_SESSION[$stance])";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-
-        $conn->close();*/
 
         $fp = fopen("log.html", 'a');
         fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session.</i><br></div>");
@@ -112,13 +84,27 @@ if(isset($_GET['logout'])) {
 
     //Simple exit message
     $fp = fopen("log.html", 'a');
-    fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has left the chat session.</i><br></div>");
+    fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has left the chat session. Your Connection will close in 2 seconds.</i><br></div>");
     fclose($fp);
 
+    $handle = fopen("test.html", "r");
+    fwrite($handle, 'User Left');
+    fclose($handle);
+
     session_destroy();
+    header("Location: thanks.php"); //Redirect the user
     $file = 'log.html';
     unlink($file);
-    header("Location: thanks.php"); //Redirect the user
+}
+
+
+
+if(file_exists("test.html") && filesize("test.html") > 0) {
+    $handle = fopen("test.html", "r");
+    fwrite($handle, '');
+    fclose($handle);
+    session_destroy();
+    header("Location: thanks.php");
 }
 ?>
 
