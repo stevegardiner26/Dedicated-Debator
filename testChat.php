@@ -87,7 +87,7 @@ if(isset($_GET['logout'])) {
     fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has left the chat session. Your Connection will close in 2 seconds.</i><br></div>");
     fclose($fp);
 
-    $handle = fopen("test.html", "r");
+    $handle = fopen("test.html", "a");
     fwrite($handle, 'User Left');
     fclose($handle);
 
