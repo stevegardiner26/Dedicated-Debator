@@ -10,7 +10,7 @@ function loginForm(){
                 <h1>Start your Discussion! Change Minds!</h1>
                 <form action="testChat.php" method="post">
                     <div class="form-group">
-                        <label for="name" class="form-control"><h6>Alias</h6></label>
+                        <label for="name"><h6>Alias</h6></label>
                         <input name="name" type="text" class="form-control" id="name" placeholder="Master Debator 10000">
                         <small class="form-text text-muted">What shall we call you? The other user will see this as your name</small>
                     </div>
@@ -22,7 +22,7 @@ function loginForm(){
                         </label>
                     </div>
                     <div class="form-group" id="recentGroup">
-                        <label for="issue"><h6>Recent Issues:<</h6></label>
+                        <label for="issue"><h6>Recent Issues:</h6></label>
                         <select name="issueRecent" id="issue" class="form-control">
                             <option value="default">Recent</option>
                             <option value="Caravan">Migrant Caravan</option>

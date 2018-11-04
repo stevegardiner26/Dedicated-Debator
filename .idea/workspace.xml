@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7a0193fe-0750-439c-8af2-00a2ab8f8475" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/testChat.php" beforeDir="false" afterPath="$PROJECT_DIR$/testChat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thanks.php" beforeDir="false" afterPath="$PROJECT_DIR$/thanks.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,8 +50,8 @@
       <file leaf-file-name="testChat.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testChat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="137" column="52" lean-forward="true" selection-start-line="137" selection-start-column="52" selection-end-line="137" selection-end-column="52" />
+            <state relative-caret-position="384">
+              <caret line="24" column="61" lean-forward="true" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
               <folding>
                 <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -71,10 +72,11 @@
       <file leaf-file-name="thanks.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/thanks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            <state relative-caret-position="496">
+              <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
               <folding>
                 <element signature="e#127#144#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,8 +113,8 @@
         <option value="$PROJECT_DIR$/chatRoom.php" />
         <option value="$PROJECT_DIR$/debate.php" />
         <option value="$PROJECT_DIR$/html/index.html" />
-        <option value="$PROJECT_DIR$/thanks.php" />
         <option value="$PROJECT_DIR$/testChat.php" />
+        <option value="$PROJECT_DIR$/thanks.php" />
       </list>
     </option>
   </component>
@@ -199,12 +201,12 @@
       <option name="presentableId" value="Default" />
       <updated>1541268862427</updated>
       <workItem from="1541268863755" duration="1158000" />
-      <workItem from="1541270368429" duration="18878000" />
+      <workItem from="1541270368429" duration="19194000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20036000" />
+    <option name="totallyTimeSpent" value="20352000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -369,8 +371,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testChat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="137" column="52" lean-forward="true" selection-start-line="137" selection-start-column="52" selection-end-line="137" selection-end-column="52" />
+        <state relative-caret-position="384">
+          <caret line="24" column="61" lean-forward="true" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
           <folding>
             <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -380,10 +382,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/thanks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        <state relative-caret-position="496">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
           <folding>
             <element signature="e#127#144#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
