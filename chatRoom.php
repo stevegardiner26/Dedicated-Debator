@@ -36,7 +36,8 @@
                             <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
                             <div style="clear:both"></div>
                         </div>
-                        <div id="chatbox"><?php
+                        <div id="chatbox">
+                            <?php
                             if(file_exists("log.html") && filesize("log.html") > 0){
                                 $handle = fopen("log.html", "r");
                                 $contents = fread($handle, filesize("log.html"));
@@ -68,18 +69,6 @@
                                 $("#usermsg").attr("value", "");
                                 return false;
                             });
-
-                            //Load the file containing the chat log
-                            function loadLog(){
-
-                                $.ajax({
-                                    url: "log.html",
-                                    cache: false,
-                                    success: function(html){
-                                        $("#chatbox").html(html); //Insert chat log into the #chatbox div
-                                    },
-                                });
-                            }
 
                             //Load the file containing the chat log
                             function loadLog(){
@@ -186,7 +175,6 @@ function loginForm(){
 }
 
 if(isset($_POST['enter'])){
-    echo "please";
     if($_POST['name'] != ""){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
     }
