@@ -72,7 +72,7 @@ if(isset($_POST['enter'])){
 
 
         $fp = fopen("log.html", 'a');
-        fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session.</i><br></div>");
+        fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session. You will be disconnected shortly.</i><br></div>");
         fclose($fp);
     }
     else{
@@ -91,10 +91,11 @@ if(isset($_GET['logout'])) {
     fwrite($handle, 'User Left');
     fclose($handle);
 
+    sleep(5);
     session_destroy();
     header("Location: thanks.php"); //Redirect the user
     $handle = fopen("log.html", "r+");
-    //ftruncate($handle, 0);
+    ftruncate($handle, 0);
     fclose($handle);
     $checker = false;
 }
