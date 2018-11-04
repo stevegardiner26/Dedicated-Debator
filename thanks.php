@@ -23,13 +23,10 @@ include 'html/footer.html';
 ?>
 
 <style>
-    .row {
-        position: relative;
-    }
-
     .col-md-8 {
-        position: relative;
+        position: absolute;
+        left: 50%;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-50%) translateX(-50%);
     }
 </style>

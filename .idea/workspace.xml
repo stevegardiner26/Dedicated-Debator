@@ -51,8 +51,8 @@
       <file leaf-file-name="testChat.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testChat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="184" column="38" selection-start-line="184" selection-start-column="38" selection-end-line="184" selection-end-column="38" />
+            <state relative-caret-position="400">
+              <caret line="110" column="43" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -73,8 +73,8 @@
       <file leaf-file-name="thanks.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/thanks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
+            <state relative-caret-position="352">
+              <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
               <folding>
                 <element signature="e#127#144#0#HTML" expanded="true" />
               </folding>
@@ -201,12 +201,12 @@
       <option name="presentableId" value="Default" />
       <updated>1541268862427</updated>
       <workItem from="1541268863755" duration="1158000" />
-      <workItem from="1541270368429" duration="18181000" />
+      <workItem from="1541270368429" duration="18486000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19339000" />
+    <option name="totallyTimeSpent" value="19644000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -362,6 +362,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/thanks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding>
+            <element signature="e#127#144#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/post.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -369,20 +379,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thanks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-          <folding>
-            <element signature="e#127#144#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testChat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="184" column="38" selection-start-line="184" selection-start-column="38" selection-end-line="184" selection-end-column="38" />
+        <state relative-caret-position="400">
+          <caret line="110" column="43" selection-start-line="110" selection-start-column="43" selection-end-line="110" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />

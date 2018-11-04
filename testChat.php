@@ -91,6 +91,7 @@ if(isset($_GET['logout'])) {
 <head>
     <title>Dedicated Debator</title>
 </head>
+<body>
 <?php include('html/nav.html')?>
 <?php
 if(!isset($_SESSION['name'])){
@@ -98,26 +99,28 @@ if(!isset($_SESSION['name'])){
 }
 else{
     ?>
-    <div id="wrapper container">
-        <div id="menu">
-            <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
-            <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
-            <div style="clear:both"></div>
+    <div class="debateFinder">
+        <div id="wrapper container">
+            <div id="menu">
+                <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
+                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+                <div style="clear:both"></div>
+            </div>
+            <div id="chatbox">
+                <?php
+                    if(file_exists("log.html") && filesize("log.html") > 0){
+                        $handle = fopen("log.html", "r");
+                        $contents = fread($handle, filesize("log.html"));
+                        fclose($handle);
+                        echo $contents;
+                    }
+                ?>
+            </div>
+            <form name="message" action="">
+                <input name="usermsg" type="text" id="usermsg" size="63" />
+                <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
+            </form>
         </div>
-        <div id="chatbox">
-            <?php
-                if(file_exists("log.html") && filesize("log.html") > 0){
-                    $handle = fopen("log.html", "r");
-                    $contents = fread($handle, filesize("log.html"));
-                    fclose($handle);
-                    echo $contents;
-                }
-            ?>
-        </div>
-        <form name="message" action="">
-            <input name="usermsg" type="text" id="usermsg" size="63" />
-            <input name="submitmsg" type="submit"  id="submitmsg" value="Send" />
-        </form>
     </div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
     <script type="text/javascript">
@@ -185,7 +188,7 @@ else{
     a:hover { text-decoration:underline; }
 
     #wrapper, #loginform {
-        margin:200px auto;
+        margin:0 auto;
         padding-bottom:25px;
         background:#EBF4FB;
         width:504px;
