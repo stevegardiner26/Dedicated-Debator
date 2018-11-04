@@ -137,7 +137,7 @@ else{
             $("#submitmsg").click(function(){
                 var clientmsg = $("#usermsg").val();
                 $.post("post.php", {text: clientmsg});
-                $("#usermsg").setAttribute("value", "");
+                $("#usermsg").attr("value", "");
                 return false;
             });
 
