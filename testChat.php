@@ -68,7 +68,9 @@ if(isset($_POST['enter'])){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
         $_SESSION["issueMain"] = stripslashes(htmlspecialchars($_POST['issueMain']));
         $_SESSION["issueRecent"] = stripslashes(htmlspecialchars($_POST['issueRecent']));
-        $_SESSION["issueSelector"] = stripslashes(htmlspecialchars($_POST['issueSelector']));
+        if(isset($_POST['issueSelector'])) {
+            $_SESSION["issueSelector"] = stripslashes(htmlspecialchars($_POST['issueSelector']));
+        }
         $_SESSION["side"] = stripslashes(htmlspecialchars($_POST['side']));
 
         if($_SESSION["issueSelector"] === "on"){
@@ -135,7 +137,7 @@ else{
     ?>
 <header class="masthead chatMast">
     <div class="debateFinder">
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col-md">
                 <h2 style="margin: 30px;"><?php if($_SESSION["issueSelector"] === "on"){echo "Controversial Issues";} else {echo "Recent Issues";} ?></h2><br>
             </div>
@@ -251,17 +253,19 @@ else{
     @media only screen and (max-width: 991px) {
         .loginMast {
             padding-top: 0 !important;
+            width: 100vw !important;
             height: 150vh !important;
         }
 
         .chatMast {
             padding-top: 50px !important;
+            width: 100vw !important;
             height: 150vh !important;
         }
 
         #wrapper {
             width: 95vw !important;
-            height: 75vh !important;
+            height: 100vh !important;
         }
 
         #chatbox {

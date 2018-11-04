@@ -28,7 +28,7 @@ include 'html/footer.html';
         position: absolute;
         background-image: url('img/city-3660779_1920.jpg');
         -webkit-background-size: 100%;
-        background-size: 120%;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
         background-attachment: fixed;
