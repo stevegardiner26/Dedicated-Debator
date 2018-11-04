@@ -61,6 +61,8 @@ function loginForm(){
     ';
 }
 
+$GLOBALS['logger'] = '';
+
 if(isset($_POST['enter'])){
     if($_POST['name'] != ""){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
@@ -69,9 +71,14 @@ if(isset($_POST['enter'])){
         $_SESSION["issueSelector"] = stripslashes(htmlspecialchars($_POST['issueSelector']));
         $_SESSION["side"] = stripslashes(htmlspecialchars($_POST['side']));
 
+        if($_SESSION["issueSelector"] === "on"){
+            $GLOBALS['logger'] = $_SESSION["issueMain"];
+        } else {
+            $GLOBALS['logger'] = $_SESSION["issueRecent"];
+        }
 
 
-        $fp = fopen("log.html", 'a');
+        $fp = fopen("log" . $GLOBALS['logger'] . ".html", 'a');
         fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session.</i><br></div>");
         fclose($fp);
     }
