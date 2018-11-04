@@ -265,7 +265,7 @@ else{
 
         #wrapper {
             width: 95vw !important;
-            height: 100vh !important;
+            height: 100% !important;
         }
 
         #chatbox {
