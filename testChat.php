@@ -81,7 +81,7 @@ if(isset($_POST['enter'])){
 
 
         $fp = fopen("log" . $_SESSION['logger'] . ".html", 'a');
-        fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session.</i><br></div>");
+        fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session. They are " . $_SESSION['side'] . " the issue</i><br></div>");
         fclose($fp);
     }
     else{
