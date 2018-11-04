@@ -99,11 +99,8 @@ if(isset($_GET['logout'])) {
 }
 
 
-
-if((filesize("test.html") > 0)&&($checker === true)) {
+while((filesize("test.html") > 0)&&($checker === true)) {
     session_destroy();
-    header("Location: thanks.php");
-
     $handle = fopen("test.html", "r+");
     ftruncate ($handle,0);
     fclose($handle);
