@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a0193fe-0750-439c-8af2-00a2ab8f8475" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/thanks.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chatRoom.php" beforeDir="false" afterPath="$PROJECT_DIR$/chatRoom.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,8 +49,8 @@
       <file leaf-file-name="chatRoom.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chatRoom.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="189" column="50" lean-forward="true" selection-start-line="189" selection-start-column="50" selection-end-line="189" selection-end-column="50" />
+            <state relative-caret-position="268">
+              <caret line="188" column="18" selection-start-line="188" selection-start-column="18" selection-end-line="188" selection-end-column="18" />
               <folding>
                 <element signature="e#1410#1428#0#HTML" expanded="true" />
               </folding>
@@ -102,8 +101,8 @@
         <option value="$PROJECT_DIR$/html/index.html" />
         <option value="$PROJECT_DIR$/debate.php" />
         <option value="$PROJECT_DIR$/post.php" />
-        <option value="$PROJECT_DIR$/chatRoom.php" />
         <option value="$PROJECT_DIR$/thanks.php" />
+        <option value="$PROJECT_DIR$/chatRoom.php" />
       </list>
     </option>
   </component>
@@ -190,12 +189,12 @@
       <option name="presentableId" value="Default" />
       <updated>1541268862427</updated>
       <workItem from="1541268863755" duration="1158000" />
-      <workItem from="1541270368429" duration="14427000" />
+      <workItem from="1541270368429" duration="14540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15585000" />
+    <option name="totallyTimeSpent" value="15698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -354,8 +353,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chatRoom.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="189" column="50" lean-forward="true" selection-start-line="189" selection-start-column="50" selection-end-line="189" selection-end-column="50" />
+        <state relative-caret-position="268">
+          <caret line="188" column="18" selection-start-line="188" selection-start-column="18" selection-end-line="188" selection-end-column="18" />
           <folding>
             <element signature="e#1410#1428#0#HTML" expanded="true" />
           </folding>

@@ -186,6 +186,7 @@ function loginForm(){
 }
 
 if(isset($_POST['enter'])){
+    echo "please";
     if($_POST['name'] != ""){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
     }
