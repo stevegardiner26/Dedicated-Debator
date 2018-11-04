@@ -64,6 +64,10 @@ function loginForm(){
 if(isset($_POST['enter'])){
     if($_POST['name'] != ""){
         $_SESSION['name'] = stripslashes(htmlspecialchars($_POST['name']));
+
+        $fp = fopen("log.html", 'a');
+        fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session.</i><br></div>");
+        fclose($fp);
     }
     else{
         echo '<span class="error">Please type in a name</span>';
@@ -78,14 +82,14 @@ if(isset($_GET['logout'])) {
     fclose($fp);
 
     session_destroy();
-    header("Location: testChat.php"); //Redirect the user
+    header("Location: thanks.php"); //Redirect the user
 }
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="https://www.w3.org/1999/xhtml">
 <head>
-    <title>Chat - Customer Module</title>
+    <title>Dedicated Debator</title>
 </head>
 <?php include('html/nav.html')?>
 <?php
@@ -94,7 +98,7 @@ if(!isset($_SESSION['name'])){
 }
 else{
     ?>
-    <div id="wrapper">
+    <div id="wrapper container">
         <div id="menu">
             <p class="welcome">Welcome, <b><?php echo $_SESSION['name']; ?></b></p>
             <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
@@ -186,6 +190,10 @@ else{
         background:#EBF4FB;
         width:504px;
         border:1px solid #ACD8F0; }
+
+    #wrapper {
+        margin: 200px auto;
+    }
 
     #chatbox {
         text-align:left;
