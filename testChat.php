@@ -98,9 +98,9 @@ if(isset($_GET['logout'])) {
     fwrite($handle, 'User Left');
     fclose($handle);
 
+    header("Location: thanks.php"); //Redirect the user
     sleep(5);
     session_destroy();
-    header("Location: thanks.php"); //Redirect the user
     $handle = fopen("log" . $_SESSION['logger'] . ".html", "r+");
     ftruncate($handle, 0);
     fclose($handle);
