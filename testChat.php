@@ -10,8 +10,8 @@ function loginForm(){
                 <h1>Start your Discussion! Change Minds!</h1>
                 <form action="testChat.php" method="post">
                     <div class="form-group">
-                        <label for="alias">Alias:</label>
-                        <input name="alias" type="text" class="form-control" id="alias" placeholder="Master Debator 10000">
+                        <label for="name">Alias:</label>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Master Debator 10000">
                         <small class="form-text text-muted">What shall we call you? The other user will see this as your name</small>
                     </div>
                     <div class="form-group">
