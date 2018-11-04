@@ -52,6 +52,10 @@
 </script>
 
 <style>
+    body {
+        background: lightgray;
+    }
+
     form, p, span {
         margin:0;
         padding:0; }
