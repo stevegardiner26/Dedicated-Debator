@@ -21,3 +21,15 @@ include 'html/nav.html';
 <?php
 include 'html/footer.html';
 ?>
+
+<style>
+    .row {
+        position: relative;
+    }
+
+    .col-md-8 {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+</style>

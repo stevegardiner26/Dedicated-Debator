@@ -185,15 +185,15 @@ else{
     a:hover { text-decoration:underline; }
 
     #wrapper, #loginform {
-        margin:0 auto;
+        margin:200px auto;
         padding-bottom:25px;
         background:#EBF4FB;
         width:504px;
         border:1px solid #ACD8F0; }
 
-    #wrapper {
-        margin: 200px auto;
-    }
+    #loginform { padding-top:18px; }
+
+    #loginform p { margin: 5px; }
 
     #chatbox {
         text-align:left;
