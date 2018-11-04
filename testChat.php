@@ -100,11 +100,12 @@ if(isset($_GET['logout'])) {
 
 
 if(file_exists("test.html") && filesize("test.html") > 0) {
+    session_destroy();
+    header("Location: thanks.php");
+
     $handle = fopen("test.html", "r+");
     ftruncate ($handle,0);
     fclose($handle);
-    session_destroy();
-    header("Location: thanks.php");
 }
 ?>
 
