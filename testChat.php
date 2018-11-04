@@ -61,7 +61,7 @@ function loginForm(){
     ';
 }
 
-$GLOBALS['logger'] = '';
+/*$GLOBALS['logger'] = '';*/
 
 if(isset($_POST['enter'])){
     if($_POST['name'] != ""){
@@ -72,13 +72,13 @@ if(isset($_POST['enter'])){
         $_SESSION["side"] = stripslashes(htmlspecialchars($_POST['side']));
 
         if($_SESSION["issueSelector"] === "on"){
-            $GLOBALS['logger'] = $_SESSION["issueMain"];
+            $_SESSION['logger'] = $_SESSION["issueMain"];
         } else {
-            $GLOBALS['logger'] = $_SESSION["issueRecent"];
+            $_SESSION['logger'] = $_SESSION["issueRecent"];
         }
 
 
-        $fp = fopen("log" . $GLOBALS['logger'] . ".html", 'a');
+        $fp = fopen("log" . $_SESSION['logger'] . ".html", 'a');
         fwrite($fp, "<div class='msgln'><i>User " . $_SESSION['name'] . " has joined the chat session.</i><br></div>");
         fclose($fp);
     }
@@ -90,28 +90,28 @@ $checker = true;
 if(isset($_GET['logout'])) {
 
     //Simple exit message
-    $fp2 = fopen("log.html", 'a');
+    $fp2 = fopen("log" . $_SESSION['logger'] . ".html", 'a');
     fwrite($fp2, "<div class='msgln'><i>User " . $_SESSION['name'] . " has left the chat session You will be disconnected shortly.</i><br></div>");
     fclose($fp2);
 
-    $handle = fopen("test.html", "w");
+    $handle = fopen("test" . $_SESSION['logger'] . ".html", "w");
     fwrite($handle, 'User Left');
     fclose($handle);
 
     sleep(5);
     session_destroy();
     header("Location: thanks.php"); //Redirect the user
-    $handle = fopen("log.html", "r+");
+    $handle = fopen("log" . $_SESSION['logger'] . ".html", "r+");
     ftruncate($handle, 0);
     fclose($handle);
     $checker = false;
 }
 
 if(isset($_GET['logging'])) {
-    if ((filesize("test.html") > 0) && ($checker === true)) {
+    if ((filesize("test" . $_SESSION['logger'] . ".html") > 0) && ($checker === true)) {
         header("Location: thanks.php");
         session_destroy();
-        $handle = fopen("test.html", "r+");
+        $handle = fopen("test" . $_SESSION['logger'] . ".html", "r+");
         ftruncate($handle, 0);
         fclose($handle);
     }
@@ -148,9 +148,9 @@ else{
             </div>
             <div id="chatbox">
                 <?php
-                    if(file_exists("log.html") && filesize("log.html") > 0){
-                        $handle = fopen("log.html", "r");
-                        $contents = fread($handle, filesize("log.html"));
+                    if(file_exists("log" . $_SESSION['logger'] . ".html") && filesize("log" . $_SESSION['logger'] . ".html") > 0){
+                        $handle = fopen("log" . $_SESSION['logger'] . ".html", "r");
+                        $contents = fread($handle, filesize("log" . $_SESSION['logger'] . ".html"));
                         fclose($handle);
                         echo $contents;
                     }
@@ -194,7 +194,7 @@ else{
             function loadLog(){
                 var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
                 $.ajax({
-                    url: "log.html",
+                    url: "<?php echo ("log" . $_SESSION['logger'] . ".html") ?>",
                     cache: false,
                     success: function(html){
                         $("#chatbox").html(html); //Insert chat log into the #chatbox div
