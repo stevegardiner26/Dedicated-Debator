@@ -130,7 +130,7 @@ else{
             $("#submitmsg").click(function(){
                 var clientmsg = $("#usermsg").val();
                 $.post("post.php", {text: clientmsg});
-                $("#usermsg").attr("value", "");
+                $("#usermsg").setAttribute("value", "");
                 return false;
             });
 
