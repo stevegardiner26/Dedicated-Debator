@@ -213,17 +213,14 @@ else{
         .chatMast {
             overflow: hidden !important;
             padding-top: 50px !important;
-            height: 100vh !important;
         }
 
         #wrapper {
             width: 95vw !important;
-            height: 75vh !important;
         }
 
         #chatbox {
             width: 90% !important;
-            height: 65% !important;
         }
 
         #usermsg {
