@@ -93,8 +93,9 @@ if(isset($_GET['logout'])) {
 
     session_destroy();
     header("Location: thanks.php"); //Redirect the user
-    $file = 'log.html';
-    unlink($file);
+    $handle = fopen("log.html", "r+");
+    ftruncate($handle, 0);
+    fclose($handle);
     $checker = false;
 }
 
