@@ -10,7 +10,7 @@ function loginForm(){
                 <h1>Start your Discussion! Change Minds!</h1>
                 <form action="testChat.php" method="post">
                     <div class="form-group">
-                        <label for="name">Alias:</label>
+                        <label for="name" class="form-control"><h6>Alias</h6></label>
                         <input name="name" type="text" class="form-control" id="name" placeholder="Master Debator 10000">
                         <small class="form-text text-muted">What shall we call you? The other user will see this as your name</small>
                     </div>
@@ -22,7 +22,7 @@ function loginForm(){
                         </label>
                     </div>
                     <div class="form-group" id="recentGroup">
-                        <label for="issue">Recent Issues:</label>
+                        <label for="issue"><h6>Recent Issues:<</h6></label>
                         <select name="issueRecent" id="issue" class="form-control">
                             <option value="default">Recent</option>
                             <option value="Caravan">Migrant Caravan</option>
@@ -33,7 +33,7 @@ function loginForm(){
                         </select>
                     </div>
                     <div class="form-group" id="mainGroup" style="display: none;">
-                        <label for="issue">Controversial Issues:</label>
+                        <label for="issue"><h6>Controversial Issues:</h6></label>
                         <select name="issueMain" id="issue" class="form-control">
                             <option value="default">Controversy</option>
                             <option value="Immigration">Illegal Immigration</option>
@@ -43,7 +43,7 @@ function loginForm(){
                         </select>
                     </div>
                     <div class="form-group" id="forAgainst">
-                        <h5>Do you for this issue or are you against this?</h5>
+                        <h5>Are you for this or are you against this?</h5>
                         <h6>For</h6>
                         <label class="switch">
                             <input name="side" type="checkbox" onchange="forOrAgainst()" checked>
