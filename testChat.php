@@ -208,19 +208,22 @@ else{
     @media only screen and (max-width: 991px) {
         .loginMast {
             padding-top: 0 !important;
+            height: 150vh !important;
         }
 
         .chatMast {
-            overflow: hidden !important;
             padding-top: 50px !important;
+            height: 150vh !important;
         }
 
         #wrapper {
             width: 95vw !important;
+            height: 75vh !important;
         }
 
         #chatbox {
             width: 90% !important;
+            height: 65% !important;
         }
 
         #usermsg {
@@ -229,6 +232,10 @@ else{
 
         #submitmsg {
             margin: 10px auto !important;
+        }
+
+        body {
+            overflow-y: scroll !important;
         }
     }
 
